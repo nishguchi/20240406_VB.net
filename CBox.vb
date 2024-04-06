@@ -11,6 +11,8 @@ Public Class CBox
             .Items.Add("内容4")
         End With
 
+        Label4.Text = ComboBox1.Items.Count
+
     End Sub
 
 
@@ -19,6 +21,7 @@ Public Class CBox
         '表示変更
         Label2.Text = ComboBox1.SelectedItem
         Label3.Text = ComboBox1.SelectedIndex + 1.ToString
+        'Label3.Text = ComboBox1.Items.IndexOf(ComboBox1.SelectedItem) + 1.ToString
 
     End Sub
 
@@ -29,6 +32,7 @@ Public Class CBox
         If (AddText.Text <> String.Empty) Then
             ComboBox1.Items.Add(AddText.Text)
             AddText.Text = String.Empty
+            Label4.Text = ComboBox1.Items.Count
         End If
 
     End Sub
@@ -48,6 +52,7 @@ Public Class CBox
 
 
     Private Sub ClearIs()
+        '初期値セット
         ComboBox1.Text = "-選択一覧-"
         Label2.Text = "*****"
         Label3.Text = "**"
